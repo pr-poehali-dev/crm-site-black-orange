@@ -76,7 +76,7 @@ export default function Index() {
               <Icon name="Zap" size={18} style={{ color: "#0D0D0D" }} />
             </div>
             <span className="font-oswald text-xl font-bold tracking-widest uppercase animate-flicker" style={{ color: "#FF6A00" }}>
-              КРМП
+              VINEWOOD RP
             </span>
           </div>
 
@@ -441,14 +441,12 @@ function HomePage({ onNavigate, onLogin, player, onPassport }: { onNavigate: (p:
               </div>
             )}
             <h1 className="font-oswald text-6xl md:text-8xl font-bold uppercase leading-none mb-4 animate-fade-in-up" style={{ letterSpacing: "0.02em" }}>
-              <span style={{ color: "#F0F0F0" }}>ДОБРО</span>
+              <span style={{ color: "#F0F0F0" }}>VINEWOOD</span>
               <br />
-              <span className="gradient-text-orange glow-text-orange">ПОЖАЛОВАТЬ</span>
-              <br />
-              <span style={{ color: "#F0F0F0" }}>В КРМП</span>
+              <span className="gradient-text-orange glow-text-orange">ROLE PLAY</span>
             </h1>
             <p className="font-golos text-lg md:text-xl mb-8 animate-fade-in-up delay-200" style={{ color: "#888", maxWidth: "520px", lineHeight: "1.7" }}>
-              Крутой ролевой мир с живой экономикой, реальными людьми и бесконечными возможностями. Твоя история начинается здесь.
+              Живой город, настоящие люди, реальные судьбы. Здесь каждый сам пишет свою историю — от уличного бродяги до главы мафии.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up delay-300">
               <button
@@ -510,12 +508,18 @@ function HomePage({ onNavigate, onLogin, player, onPassport }: { onNavigate: (p:
 
       <section className="py-20 max-w-7xl mx-auto px-4">
         <div className="text-center mb-14">
-          <h2 className="font-oswald text-4xl md:text-5xl font-bold uppercase mb-4 animate-fade-in-up">
-            Почему <span className="gradient-text-orange">КРМП</span>?
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-golos mb-4" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF8C00", border: "1px solid rgba(255,106,0,0.2)" }}>
+            <Icon name="Star" size={12} />
+            Почему именно мы
+          </div>
+          <h2 className="font-oswald text-4xl md:text-5xl font-bold uppercase mb-5 animate-fade-in-up">
+            Мы не просто <span className="gradient-text-orange">сервер</span>
           </h2>
-          <p className="font-golos text-base" style={{ color: "#666" }}>Всё, что нужно для идеального ролевого опыта</p>
+          <p className="font-golos text-base max-w-2xl mx-auto leading-relaxed" style={{ color: "#666" }}>
+            Vinewood Role Play — это живое сообщество, где каждый игрок имеет значение. Мы создаём не просто игру, а целый мир с характером, историей и душой.
+          </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
           {features.map((f, i) => (
             <div key={i} className="card-hover rounded-xl p-6 animate-fade-in-up" style={{ backgroundColor: "#141414", animationDelay: `${i * 0.1}s` }}>
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: "rgba(255,106,0,0.1)" }}>
@@ -525,6 +529,46 @@ function HomePage({ onNavigate, onLogin, player, onPassport }: { onNavigate: (p:
               <p className="font-golos text-sm leading-relaxed" style={{ color: "#666" }}>{f.desc}</p>
             </div>
           ))}
+        </div>
+
+        {/* Большой блок "Почему мы" */}
+        <div className="rounded-2xl overflow-hidden animate-fade-in-up" style={{ background: "linear-gradient(135deg, #141414 0%, #1A0D00 100%)", border: "1px solid rgba(255,106,0,0.2)" }}>
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="p-10 flex flex-col justify-center">
+              <h3 className="font-oswald text-3xl font-bold uppercase mb-4">
+                Мы строим <span className="gradient-text-orange">город мечты</span>
+              </h3>
+              <p className="font-golos text-base leading-relaxed mb-6" style={{ color: "#777" }}>
+                Vinewood — это не клон другого сервера. Каждый скрипт, каждая система и каждое событие созданы с нуля, специально для нашего сообщества. Мы слушаем игроков и меняемся вместе с ними.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Уникальные кастомные скрипты",
+                  "Активная команда разработки",
+                  "Честная экономика без доната",
+                  "Живые ивенты каждую неделю",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(255,106,0,0.2)" }}>
+                      <Icon name="Check" size={12} style={{ color: "#FF6A00" }} />
+                    </div>
+                    <span className="font-golos text-sm" style={{ color: "#AAA" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="p-10 flex flex-col justify-center gap-5" style={{ borderLeft: "1px solid rgba(255,106,0,0.1)" }}>
+              {[
+                { q: "Зачем идти именно к нам?", a: "Потому что здесь тебя не встретит безлюдный сервер или токсичная атмосфера — только дружное сообщество и интересный геймплей." },
+                { q: "Это сложно для новичка?", a: "Нет. У нас есть наставники, гайды и активный чат поддержки — ты разберёшься за пару часов и уже начнёшь зарабатывать." },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl p-5" style={{ backgroundColor: "rgba(255,106,0,0.05)", border: "1px solid rgba(255,106,0,0.1)" }}>
+                  <p className="font-oswald text-sm uppercase tracking-wide mb-2" style={{ color: "#FF6A00" }}>{item.q}</p>
+                  <p className="font-golos text-sm leading-relaxed" style={{ color: "#666" }}>{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -549,8 +593,8 @@ function HomePage({ onNavigate, onLogin, player, onPassport }: { onNavigate: (p:
       </section>
 
       <footer className="py-8 text-center font-golos text-sm border-t" style={{ borderColor: "#252525", color: "#444" }}>
-        <span style={{ color: "#FF6A00" }} className="font-oswald font-bold tracking-widest">КРМП</span>
-        {" "}© 2024 — Все права защищены
+        <span style={{ color: "#FF6A00" }} className="font-oswald font-bold tracking-widest">VINEWOOD ROLE PLAY</span>
+        {" "}© 2025 — Все права защищены
       </footer>
     </div>
   );
@@ -558,54 +602,41 @@ function HomePage({ onNavigate, onLogin, player, onPassport }: { onNavigate: (p:
 
 /* ======================== HOW TO PLAY ======================== */
 function HowToPlayPage() {
-  const steps = [
-    { step: "01", title: "Зарегистрируйся", desc: "Создай аккаунт на нашем сайте — это займёт меньше минуты. Придумай имя персонажа и заполни анкету.", icon: "UserPlus" },
-    { step: "02", title: "Установи клиент", desc: "Скачай и установи SAMP клиент версии 0.3.7. Добавь наш сервер в список: play.krmp.ru:7777.", icon: "Download" },
-    { step: "03", title: "Изучи правила", desc: "Ознакомься с правилами сервера. Это важно — незнание правил не освобождает от наказания.", icon: "BookOpen" },
-    { step: "04", title: "Выбери фракцию", desc: "На старте тебе доступны базовые профессии. Покупай бизнес, вступай в фракции и развивай персонажа.", icon: "Users" },
-    { step: "05", title: "Начни играть", desc: "Заходи на сервер, знакомься с игроками, зарабатывай деньги и строй свою репутацию.", icon: "Play" },
-  ];
-  const rules = [
-    "Запрещён читерство и использование багов",
-    "Roleplay обязателен — играй роль своего персонажа",
-    "Уважай других игроков и администрацию",
-    "Запрещены оскорбления и токсичное поведение",
-    "DM (убийство без причины) строго запрещён",
-    "Реклама других серверов — бан навсегда",
-  ];
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
-      <div className="mb-12 animate-fade-in-up">
-        <div className="inline-flex items-center gap-2 text-xs font-golos mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF6A00", border: "1px solid rgba(255,106,0,0.2)" }}>
-          <Icon name="Gamepad2" size={14} />Руководство новичка
+    <div className="max-w-3xl mx-auto px-4 py-24 text-center animate-fade-in">
+      <div className="relative inline-block mb-8">
+        <div className="w-28 h-28 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "rgba(255,106,0,0.08)", border: "2px solid rgba(255,106,0,0.2)" }}>
+          <Icon name="Wrench" size={48} style={{ color: "rgba(255,106,0,0.5)" }} />
         </div>
-        <h1 className="font-oswald text-5xl font-bold uppercase mb-3">Как <span className="gradient-text-orange">начать играть</span></h1>
-        <p className="font-golos text-base" style={{ color: "#666" }}>5 простых шагов от регистрации до первой игровой сессии</p>
       </div>
-      <div className="space-y-4 mb-16">
-        {steps.map((s, i) => (
-          <div key={i} className="card-hover rounded-xl p-6 flex gap-6 animate-fade-in-up" style={{ backgroundColor: "#141414", animationDelay: `${i * 0.08}s` }}>
-            <div className="flex-shrink-0"><div className="font-oswald text-4xl font-bold" style={{ color: "rgba(255,106,0,0.2)" }}>{s.step}</div></div>
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 rounded flex items-center justify-center" style={{ backgroundColor: "rgba(255,106,0,0.1)" }}><Icon name={s.icon} size={16} style={{ color: "#FF6A00" }} /></div>
-                <h3 className="font-oswald text-xl font-semibold uppercase tracking-wide">{s.title}</h3>
-              </div>
-              <p className="font-golos text-sm leading-relaxed" style={{ color: "#777" }}>{s.desc}</p>
-            </div>
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-golos mb-6" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF8C00", border: "1px solid rgba(255,106,0,0.3)" }}>
+        <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#FF6A00" }} />
+        В разработке
+      </div>
+      <h1 className="font-oswald text-5xl md:text-6xl font-bold uppercase mb-6">
+        Как <span className="gradient-text-orange">начать играть</span>
+      </h1>
+      <p className="font-golos text-lg leading-relaxed mb-4" style={{ color: "#666", maxWidth: "480px", margin: "0 auto 16px" }}>
+        Мы активно работаем над этим разделом. Скоро здесь появится полное руководство для новых игроков.
+      </p>
+      <p className="font-golos text-sm" style={{ color: "#444" }}>
+        Следи за обновлениями в нашем{" "}
+        <a href="https://discord.gg/xWx4Pv82" target="_blank" rel="noopener noreferrer" style={{ color: "#7289DA" }}>Discord</a>
+        {" "}и{" "}
+        <a href="https://vk.com/vinewoodrp2" target="_blank" rel="noopener noreferrer" style={{ color: "#4C75A3" }}>ВКонтакте</a>
+      </p>
+      <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto">
+        {[
+          { label: "Гайд для новичка", icon: "BookOpen" },
+          { label: "Список фракций", icon: "Shield" },
+          { label: "Правила сервера", icon: "FileText" },
+        ].map((item, i) => (
+          <div key={i} className="rounded-xl p-5 flex flex-col items-center gap-3 opacity-40" style={{ backgroundColor: "#141414", border: "1px solid #252525" }}>
+            <Icon name={item.icon} size={22} style={{ color: "#FF6A00" }} />
+            <span className="font-golos text-xs text-center" style={{ color: "#666" }}>{item.label}</span>
+            <span className="text-xs font-golos px-2 py-0.5 rounded" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF8C00" }}>Скоро</span>
           </div>
         ))}
-      </div>
-      <div className="rounded-xl p-8 animate-fade-in-up" style={{ backgroundColor: "#141414", border: "1px solid rgba(255,106,0,0.15)" }}>
-        <div className="flex items-center gap-3 mb-6"><Icon name="AlertTriangle" size={22} style={{ color: "#FF6A00" }} /><h2 className="font-oswald text-2xl font-bold uppercase">Основные правила</h2></div>
-        <div className="grid md:grid-cols-2 gap-3">
-          {rules.map((r, i) => (
-            <div key={i} className="flex items-start gap-3 py-2">
-              <div className="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold" style={{ backgroundColor: "rgba(255,106,0,0.2)", color: "#FF6A00" }}>{i + 1}</div>
-              <span className="font-golos text-sm" style={{ color: "#AAA" }}>{r}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -613,55 +644,70 @@ function HowToPlayPage() {
 
 /* ======================== FORUM ======================== */
 function ForumPage() {
-  const categories = [
-    { title: "Объявления", desc: "Официальные новости и обновления сервера", icon: "Megaphone", posts: 12, color: "#FF6A00" },
-    { title: "Общение", desc: "Свободное общение игроков", icon: "MessageCircle", posts: 847, color: "#4CAF50" },
-    { title: "Помощь", desc: "Вопросы и ответы, помощь новичкам", icon: "HelpCircle", posts: 234, color: "#2196F3" },
-    { title: "Жалобы", desc: "Подача жалоб на игроков и администрацию", icon: "Flag", posts: 56, color: "#F44336" },
-    { title: "Предложения", desc: "Идеи и предложения по улучшению сервера", icon: "Lightbulb", posts: 189, color: "#9C27B0" },
-    { title: "Фракции", desc: "Обсуждение фракций, наборы, новости", icon: "Shield", posts: 312, color: "#FF9800" },
+  const planned = [
+    { title: "Объявления", desc: "Официальные новости, патч-ноты и события от администрации", icon: "Megaphone", color: "#FF6A00" },
+    { title: "Общение", desc: "Свободное общение игроков, поиск тиммейтов и знакомства", icon: "MessageCircle", color: "#4CAF50" },
+    { title: "Помощь", desc: "Вопросы и ответы, поддержка новичков от опытных игроков", icon: "HelpCircle", color: "#2196F3" },
+    { title: "Жалобы", desc: "Официальные жалобы на нарушителей с доказательствами", icon: "Flag", color: "#F44336" },
+    { title: "Предложения", desc: "Твои идеи по развитию сервера — мы читаем каждое сообщение", icon: "Lightbulb", color: "#9C27B0" },
+    { title: "Фракции", desc: "Набор в фракции, внутренние новости и взаимодействие", icon: "Shield", color: "#FF9800" },
   ];
-  const recentPosts = [
-    { author: "Admin_Pavel", title: "Обновление 2.5 — патч-ноты", time: "2 часа назад", category: "Объявления" },
-    { author: "BigBoss_Mike", title: "Ищу партнёра по бизнесу", time: "4 часа назад", category: "Общение" },
-    { author: "NewPlayer99", title: "Как получить первую работу?", time: "5 часов назад", category: "Помощь" },
-    { author: "CarDealer_Alex", title: "Продаётся Infernus — дёшево", time: "6 часов назад", category: "Общение" },
-    { author: "CopOfficer_Dima", title: "Набор в LSPD открыт!", time: "8 часов назад", category: "Фракции" },
-  ];
+
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <div className="flex items-start justify-between mb-10 animate-fade-in-up">
-        <div>
-          <div className="inline-flex items-center gap-2 text-xs font-golos mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF6A00", border: "1px solid rgba(255,106,0,0.2)" }}><Icon name="MessageSquare" size={14} />Сообщество</div>
-          <h1 className="font-oswald text-5xl font-bold uppercase"><span className="gradient-text-orange">Форум</span></h1>
+    <div className="max-w-5xl mx-auto px-4 py-12">
+      <div className="mb-12 animate-fade-in-up">
+        <div className="inline-flex items-center gap-2 text-xs font-golos mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF6A00", border: "1px solid rgba(255,106,0,0.2)" }}>
+          <Icon name="MessageSquare" size={14} />Сообщество
         </div>
-        <button className="mt-2 flex items-center gap-2 px-5 py-2.5 rounded font-oswald text-sm font-medium uppercase tracking-wider transition-all hover:scale-105" style={{ backgroundColor: "#FF6A00", color: "#0D0D0D" }}><Icon name="Plus" size={16} />Новая тема</button>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-        {categories.map((cat, i) => (
-          <div key={i} className="card-hover rounded-xl p-5 cursor-pointer animate-fade-in-up" style={{ backgroundColor: "#141414", animationDelay: `${i * 0.07}s` }}>
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${cat.color}18` }}><Icon name={cat.icon} size={20} style={{ color: cat.color }} /></div>
-              <div>
-                <h3 className="font-oswald text-lg font-semibold uppercase tracking-wide mb-1">{cat.title}</h3>
-                <p className="font-golos text-xs mb-2" style={{ color: "#666" }}>{cat.desc}</p>
-                <span className="font-golos text-xs" style={{ color: "#444" }}>{cat.posts} тем</span>
-              </div>
-            </div>
+        <div className="flex items-center gap-4 flex-wrap">
+          <h1 className="font-oswald text-5xl font-bold uppercase"><span className="gradient-text-orange">Форум</span></h1>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-golos" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF8C00", border: "1px solid rgba(255,106,0,0.3)" }}>
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#FF6A00" }} />
+            В разработке
           </div>
-        ))}
+        </div>
       </div>
-      <div className="rounded-xl overflow-hidden animate-fade-in-up" style={{ border: "1px solid #252525" }}>
-        <div className="px-6 py-4 flex items-center gap-3" style={{ backgroundColor: "#141414", borderBottom: "1px solid #252525" }}><Icon name="Clock" size={18} style={{ color: "#FF6A00" }} /><h2 className="font-oswald text-xl font-bold uppercase">Последние обсуждения</h2></div>
-        {recentPosts.map((post, i) => (
-          <div key={i} className="px-6 py-4 flex items-center justify-between cursor-pointer transition-colors hover:bg-white/5" style={{ borderBottom: i < recentPosts.length - 1 ? "1px solid #1A1A1A" : "none" }}>
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center font-oswald text-sm font-bold" style={{ backgroundColor: "rgba(255,106,0,0.15)", color: "#FF6A00" }}>{post.author[0]}</div>
-              <div><p className="font-golos text-sm font-medium">{post.title}</p><p className="font-golos text-xs" style={{ color: "#555" }}>{post.author}</p></div>
-            </div>
-            <div className="text-right">
-              <span className="inline-block text-xs font-golos px-2 py-0.5 rounded mb-1" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF8C00" }}>{post.category}</span>
-              <p className="font-golos text-xs" style={{ color: "#444" }}>{post.time}</p>
+
+      {/* Описание форума */}
+      <div className="rounded-2xl p-8 mb-10 animate-fade-in-up" style={{ background: "linear-gradient(135deg, #141414, #1A0D00)", border: "1px solid rgba(255,106,0,0.2)" }}>
+        <div className="flex items-start gap-5">
+          <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(255,106,0,0.1)", border: "1px solid rgba(255,106,0,0.2)" }}>
+            <Icon name="Construction" size={28} style={{ color: "#FF6A00" }} />
+          </div>
+          <div>
+            <h2 className="font-oswald text-2xl font-bold uppercase mb-3">Форум Vinewood Role Play</h2>
+            <p className="font-golos text-base leading-relaxed mb-4" style={{ color: "#777" }}>
+              Наш форум — это центральная площадка сообщества, где игроки смогут общаться, делиться опытом, подавать жалобы и предлагать идеи. Мы хотим создать удобное и безопасное пространство для каждого участника проекта.
+            </p>
+            <p className="font-golos text-sm leading-relaxed" style={{ color: "#555" }}>
+              Команда разработчиков активно работает над запуском форума. Пока что общение доступно в нашем{" "}
+              <a href="https://discord.gg/xWx4Pv82" target="_blank" rel="noopener noreferrer" style={{ color: "#7289DA" }}>Discord-сервере</a>
+              {" "}и группе{" "}
+              <a href="https://vk.com/vinewoodrp2" target="_blank" rel="noopener noreferrer" style={{ color: "#4C75A3" }}>ВКонтакте</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Планируемые разделы */}
+      <h2 className="font-oswald text-xl font-bold uppercase mb-5 flex items-center gap-3 animate-fade-in-up" style={{ color: "#555" }}>
+        <Icon name="Layout" size={18} style={{ color: "#444" }} />
+        Планируемые разделы
+      </h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {planned.map((cat, i) => (
+          <div key={i} className="rounded-xl p-5 opacity-60 animate-fade-in-up" style={{ backgroundColor: "#141414", border: "1px solid #1E1E1E", animationDelay: `${i * 0.07}s` }}>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${cat.color}12` }}>
+                <Icon name={cat.icon} size={20} style={{ color: cat.color }} />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-oswald text-base font-semibold uppercase tracking-wide">{cat.title}</h3>
+                  <span className="text-xs font-golos px-1.5 py-0.5 rounded" style={{ backgroundColor: "rgba(255,106,0,0.08)", color: "#664400" }}>Скоро</span>
+                </div>
+                <p className="font-golos text-xs leading-relaxed" style={{ color: "#555" }}>{cat.desc}</p>
+              </div>
             </div>
           </div>
         ))}
