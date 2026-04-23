@@ -712,10 +712,8 @@ function InterestingPage() {
 /* ======================== CONTACTS ======================== */
 function ContactsPage() {
   const contacts = [
-    { title: "Discord", desc: "Основное сообщество сервера", value: "discord.gg/krmp", icon: "MessageCircle", color: "#7289DA" },
-    { title: "Telegram", desc: "Новости и объявления", value: "@krmp_official", icon: "Send", color: "#2CA5E0" },
-    { title: "VKontakte", desc: "Группа ВКонтакте", value: "vk.com/krmp", icon: "Users", color: "#4C75A3" },
-    { title: "Email", desc: "Для официальных обращений", value: "admin@krmp.ru", icon: "Mail", color: "#FF6A00" },
+    { title: "Discord", desc: "Официальный сервер сообщества", value: "discord.gg/xWx4Pv82", href: "https://discord.gg/xWx4Pv82", icon: "MessageCircle", color: "#7289DA" },
+    { title: "VKontakte", desc: "Группа ВКонтакте", value: "vk.com/vinewoodrp2", href: "https://vk.com/vinewoodrp2", icon: "Users", color: "#4C75A3" },
   ];
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
@@ -723,26 +721,18 @@ function ContactsPage() {
         <div className="inline-flex items-center gap-2 text-xs font-golos mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(255,106,0,0.1)", color: "#FF6A00", border: "1px solid rgba(255,106,0,0.2)" }}><Icon name="Phone" size={14} />Связаться с нами</div>
         <h1 className="font-oswald text-5xl font-bold uppercase"><span className="gradient-text-orange">Контакты</span></h1>
       </div>
-      <div className="grid md:grid-cols-2 gap-5 mb-12">
+      <div className="grid md:grid-cols-2 gap-5">
         {contacts.map((c, i) => (
-          <div key={i} className="card-hover rounded-xl p-6 flex items-center gap-5 cursor-pointer animate-fade-in-up" style={{ backgroundColor: "#141414", animationDelay: `${i * 0.1}s` }}>
-            <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${c.color}18`, border: `1px solid ${c.color}30` }}><Icon name={c.icon} size={26} style={{ color: c.color }} /></div>
+          <a key={i} href={c.href} target="_blank" rel="noopener noreferrer" className="card-hover rounded-xl p-8 flex items-center gap-5 animate-fade-in-up no-underline" style={{ backgroundColor: "#141414", animationDelay: `${i * 0.1}s`, textDecoration: "none" }}>
+            <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${c.color}18`, border: `1px solid ${c.color}40` }}><Icon name={c.icon} size={30} style={{ color: c.color }} /></div>
             <div>
-              <h3 className="font-oswald text-xl font-bold uppercase tracking-wide mb-0.5">{c.title}</h3>
-              <p className="font-golos text-xs mb-1.5" style={{ color: "#555" }}>{c.desc}</p>
+              <h3 className="font-oswald text-2xl font-bold uppercase tracking-wide mb-1" style={{ color: "#F0F0F0" }}>{c.title}</h3>
+              <p className="font-golos text-xs mb-2" style={{ color: "#555" }}>{c.desc}</p>
               <p className="font-golos text-sm font-medium" style={{ color: c.color }}>{c.value}</p>
             </div>
-          </div>
+            <div className="ml-auto flex-shrink-0"><Icon name="ExternalLink" size={18} style={{ color: "#444" }} /></div>
+          </a>
         ))}
-      </div>
-      <div className="rounded-xl p-8 animate-fade-in-up" style={{ backgroundColor: "#141414", border: "1px solid #252525" }}>
-        <h2 className="font-oswald text-2xl font-bold uppercase mb-6 flex items-center gap-3"><Icon name="Mail" size={22} style={{ color: "#FF6A00" }} />Написать нам</h2>
-        <div className="grid md:grid-cols-2 gap-4 mb-4">
-          <div><label className="font-golos text-xs block mb-2" style={{ color: "#666" }}>Имя</label><input type="text" placeholder="Ваше имя" className="w-full px-4 py-3 rounded font-golos text-sm outline-none" style={{ backgroundColor: "#1A1A1A", border: "1px solid #303030", color: "#F0F0F0" }} /></div>
-          <div><label className="font-golos text-xs block mb-2" style={{ color: "#666" }}>Email</label><input type="email" placeholder="your@email.com" className="w-full px-4 py-3 rounded font-golos text-sm outline-none" style={{ backgroundColor: "#1A1A1A", border: "1px solid #303030", color: "#F0F0F0" }} /></div>
-        </div>
-        <div className="mb-4"><label className="font-golos text-xs block mb-2" style={{ color: "#666" }}>Сообщение</label><textarea rows={4} placeholder="Ваше сообщение..." className="w-full px-4 py-3 rounded font-golos text-sm outline-none resize-none" style={{ backgroundColor: "#1A1A1A", border: "1px solid #303030", color: "#F0F0F0" }} /></div>
-        <button className="flex items-center gap-2 px-8 py-3 rounded font-oswald text-sm font-medium uppercase tracking-wider transition-all hover:scale-105 glow-orange" style={{ backgroundColor: "#FF6A00", color: "#0D0D0D" }}><Icon name="Send" size={16} />Отправить</button>
       </div>
     </div>
   );
